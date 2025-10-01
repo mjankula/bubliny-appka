@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-bubliny-appka
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: namespace1
+    server: https://kubernetes.default.svc
+  project:  default
+  source:
+    path: bubble-animation/application-mainfest
+    repoURL: https://github.com/mjankula/argocd-openshift2
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+

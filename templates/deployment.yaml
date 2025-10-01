@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bubliny-appka
+  name: bubliny-appka
+  namespace: namespace1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bubliny-appka
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: bubliny-appka
+    spec:
+      containers:
+      - image: quay.io/rhdevelopers/bgd:1.0.0
+        name: bubliny-appka
+        env:
+        - name: COLOR
+          value: "white"
+

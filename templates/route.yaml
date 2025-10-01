@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: bubliny-appka
+  name: bubliny-appka
+  namespace: namespace1
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: bubliny-appka
+    weight: 100
