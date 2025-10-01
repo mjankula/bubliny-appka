@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project:  default
   source:
-    path: ./
+    path: templates/
     repoURL: https://github.com/mjankula/bubliny-appka.git
     targetRevision: main
   syncPolicy:
